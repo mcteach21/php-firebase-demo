@@ -6,7 +6,7 @@
     {% block head %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PHP-Firebase</title>
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -23,6 +23,7 @@
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/">
       <img  src="./assets/img/mvc.png" alt="logo" class="logo" />
+      <img  src="./assets/img/firebase.png" alt="logo" class="logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -31,12 +32,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="">Accueil</a></li>
+        <li class="nav-item active"><a class="nav-link" href="./">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="./about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="./contact">Contact</a></li>
 
-        <li><div class="dropdown-divider"></div></li>
-        <li class="nav-item"><a class="nav-link" href="./users">Users</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Pages
@@ -60,7 +59,11 @@
             </a>
         </c:if>-->
 
-        <a class="nav-link" href="./admin"><i class="fa fa-sign-in fa-lg"></i> Login</a>
+<!--        <a class="nav-link" href="./admin"><i class="fa fa-sign-in fa-lg"></i> Login</a>-->
+        <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-sm nav-link"
+                style="background-color: transparent; color: #007bff;" aria-hidden="true">
+          <i class="fa fa-sign-in fa-lg"></i> Login
+        </button>
 
       </div>
     </div>
@@ -68,6 +71,35 @@
 </header>
 
 <div class="content">{% block content %}{% endblock %}</div>
+
+
+<form id="loginUser" class="users-update-record-model form-horizontal" method="POST" action="">
+  <div id="login-modal" data-backdrop="static" data-keyboard="false" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="width:55%;">
+      <div class="modal-content" style="overflow: hidden;">
+        <div class="modal-header">
+          <h4 class="modal-title" id="custom-width-modalLabel">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body" id="addBody">
+          <div class="form-group mb-2">
+            <label for="login" class="sr-only">Login</label>
+            <input id="login" type="text" class="form-control" name="login" placeholder="Login" required autofocus>
+          </div>
+          <div class="form-group mb-2">
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
+          </div>
+        </div>
+        <div class="modal-footer">
+<!--          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>-->
+          <button id="submitUser" type="button" class="btn btn-success mb-2">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
 
 <footer class="footer">
   {% block footer %}
@@ -79,12 +111,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!-- Firebase Core JS SDK -->
-<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-<!-- tools to use -->
-<!--<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>-->
-<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="../../assets/js/main.js"></script>
+
+{% block script %}{% endblock %}
 </body>
 </html>

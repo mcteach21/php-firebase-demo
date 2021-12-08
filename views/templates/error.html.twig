@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}Test{% endblock %}
+{% block title %}Error{% endblock %}
 {% block head %}
 {{ parent() }}
 <style type="text/css">
@@ -12,6 +12,6 @@
     <h1>{{ title }}</h1>
     <p class="important alert alert-warning">
        Page not found!<br/>
-        <a href="">go back</a>
+        <a href="./">go back</a>
     </p>
 {% endblock %}
