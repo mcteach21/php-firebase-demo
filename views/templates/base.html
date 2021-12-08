@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    {% block head %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PHP-Firebase</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <title>{% block title %}{% endblock %} - MC</title>
+    {% endblock %}
+  </head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/">
+      <img  src="./assets/img/mvc.png" alt="logo" class="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="./about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="./contact">Contact</a></li>
+
+        <li><div class="dropdown-divider"></div></li>
+        <li class="nav-item"><a class="nav-link" href="./users">Users</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pages
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./pages">Blog</a>
+            <a class="dropdown-item" href="./users">Users</a>
+            <!-- <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href=./contact"#">config..</a>-->
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="float-right" style="color:white;">
+        <!--<c:if test="${not empty user}">
+            <i class="fa fa-user"></i> ${user}
+            <a class="nav-link" href="${pageContext.request.contextPath}/main/logout"
+               style="display:inline; color:crimson;">
+                <i class="fa fa-sign-out fa-lg"></i>
+            </a>
+        </c:if>-->
+
+        <a class="nav-link" href="./admin"><i class="fa fa-sign-in fa-lg"></i> Login</a>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="content">{% block content %}{% endblock %}</div>
+
+<footer class="footer">
+  {% block footer %}
+  <span class="text-muted">&copy; Copyright 2017-2021 <a href="">MC.</a></span>
+  {% endblock %}
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- Firebase Core JS SDK -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<!-- tools to use -->
+<!--<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
