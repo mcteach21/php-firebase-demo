@@ -4,6 +4,12 @@ require_once 'app/globals.php';
 
 $view = getView(); // globals
 
+//
+//echo '<hr/>********************************<br/>';
+//print_r($_SESSION);
+//echo '<br/>********************************<hr/>';
+
+
 // Render view
 set_error_handler(
 /**
@@ -13,7 +19,10 @@ set_error_handler(
     }
 );
 try {
-    echo $twig->render($view.'.html.twig', ['title' => formatted($view)]);
+    echo $twig->render($view.'.html.twig', [
+            'title' => formatted($view),
+            'session' => $_SESSION,
+        ]);
 } catch(Exception $e){
     echo $twig->render('error.html.twig', ['title' => 'Error']);
 }

@@ -1,8 +1,13 @@
 <?php
 session_start();
 
+//$_SESSION = array();
+
 if(!isset($_SESSION['view']))
     $_SESSION['view']= 'main';
+
+//if(!isset($_SESSION['firebase']))
+$_SESSION['firebase'] = 0;
 
 function setView($view){
     $_SESSION['view'] = $view;

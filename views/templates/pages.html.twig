@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+
+{% block title %}Test{% endblock %}
+{% block head %}
+{{ parent() }}
+<style type="text/css">
+    .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p class="important">
+        Welcome to my awesome website!
+    </p>
+{% endblock %}
+
+{% block script %}
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+    <script>
+
+        // Firebase Config.
+        var config = {
+            apiKey: "AIzaSyCUTm3a-og9w_K6_dCfRIzmRSP8P9xjBlo",
+            authDomain: "php-demo-071221.firebaseapp.com",
+            databaseURL: "https://php-demo-071221-default-rtdb.firebaseio.com",
+            projectId: "php-demo-071221",
+            storageBucket: "php-demo-071221.appspot.com",
+            messagingSenderId: "1068726323423",
+            appId: "1:1068726323423:web:8730da550751368e7e416a",
+            measurementId: "G-TWM4T25ZM1"
+        };
+        firebase.initializeApp(config);
+
+        console.log(firebase);
+
+        /**
+         * Auth
+         */
+
+        // firebase.auth().signInWithEmailAndPassword('dady120@hotmail.xxx', '123+aze')
+        //     .then((userCredential) => {
+        //         // Signed in
+        //         const user = userCredential.user;
+        //         console.log(user.email);
+        //     })
+        //     .catch((error) => {
+        //         console.log(error.code+' ===> '+error.message);
+        //     });
+
+        // firebase
+        //     .auth()
+        //     .createUserWithEmailAndPassword('dady120@hotmail.com', '123+aze')
+        //     .then((user) => {
+        //         console.log('User registered!');
+        //     })
+        //     .catch((error) => {
+        //         console.log('Error :', error.message);
+        //     });
+
+        // firebase.analytics();
+        // database = firebase.database();
+        // $(function(){
+        //
+        // })
+    </script>
+{% endblock %}
+

@@ -2,18 +2,21 @@
 {% extends "base.html" %}
 
 {% block title %}About{% endblock %}
+
 {% block head %}
 {{ parent() }}
-<style type="text/css">
-    .important { color: #336699; }
-</style>
 {% endblock %}
+
 {% block content %}
 <h1>{{ title }}</h1>
-<p class="important alert alert-info">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio in sunt! At aut consectetur dolor
-    ea eveniet exercitationem inventore molestiae molestias praesentium provident quasi saepe sed sequi, ut voluptate.
-</p>
+<div class="alert alert-info">
+    <h3>PHP CRUD - Firebase</h3>
+    <ul>
+        <li>Firebase (Realtime Database, Auth. ..)</li>
+        <li>Composer (Dependency Management)</li>
+        <li>Twig (Template Engine)</li>
+    </ul>
+</div>
 {% endblock %}
 
 {% block script %}

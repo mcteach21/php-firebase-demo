@@ -109,14 +109,28 @@
 {% block script %}
 
     <!-- Firebase Core JS SDK -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <!--<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>-->
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-    <script src="../../assets/js/main.js"></script>
+{#    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>#}
+
+{#    <script defer src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>#}
+{#    <!--<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>-->#}
+{#    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>#}
+
+{#    <script src="../../assets/js/main.js"></script>#}
 
     <script>
         $(function(){
-
+            /**
+             * Auth
+             */
+            // firebase
+            //     .auth()
+            //     .createUserWithEmailAndPassword('dady120@gmail.com', '123456')
+            //     .then((user) => {
+            //         console.log('User registered : '+user);
+            //     })
+            //     .catch((error) => {
+            //         console.log('Error :', error.message);
+            //     });
         })
     </script>
 {% endblock %}
